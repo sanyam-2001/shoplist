@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    transition: 0.6s ease;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2px;
+
+}
+#overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    display: none;
+}
+body{
+    
+    background-image:  url(/4.jpg);
+   
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+
+.contain{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.logo{
+    position: relative;
+    top: 10px;
+}
+header{
+    display: flex;
+    font-size: 40px;
+    margin-bottom: 20px;
+    width: 60%;
+    justify-content: space-around;
+    margin: auto;
+    color: lightgoldenrodyellow;
+    font-family: 'Shadows Into Light', cursive;
+
+}
+input{
+    width: 200px;
+    padding: 12px;
+    border: 4px solid teal;
+    font-weight: 500;
+    border-radius: 4px;
+    animation: tc 2s ;
+}
+button{
+    width: 100px;
+    padding: 12px;
+    background-color: teal;
+    border: 2px solid grey;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: tc 2s ;
+}
+button:hover{
+    background-color: lightseagreen;
+}
+table{
+    margin: auto;
+    padding: 6px;
+    width: 60%;
+    background-color: teal;
+    border-radius: 5px;
+    text-align: center;
+    animation: tc 2s ;
+
+}
+
+th{
+    background-color: rgba(235, 155, 155, 0.7);
+    padding: 4px;
+    margin: 2px;
+}
+ tr:nth-child(even) {
+    background-color: #2F2F32;
+    color: whitesmoke;
+
+  }
+   tr:nth-child(odd) {
+    background-color: #fff;
+    
+  }
+  tr:hover{background-color: lightsteelblue;color: black;}
+td{
+    padding: 6px;
+}
+.tc{
+    margin: auto;
+    margin-top: 200px;
+    background-color: lightcoral;
+    font-size: 40px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 7px;
+    border: 2px solid whitesmoke;
+    animation: tc 2s ;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: 800;
+    
+    
+
+    }
+
+.tc:hover{
+    background-color: lightpink;
+}
+#custom{
+    width: 50%;
+    height: 50vh;
+    background-color: lightpink;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid black;
+    display: none;
+    z-index: 100;
+}
+.symbol{
+    width: 10%;
+    margin: auto;
+    font-size: 40px;
+    margin-top: 1%;
+}
+.message{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5%;
+}
+#end{
+
+    width: 10%;
+    margin: auto;
+    margin-top: 5%;
+
+    font-size: 40px;
+    cursor: pointer;
+
+}
+@keyframes tc{
+    from{
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    header{
+        font-size: 20px;
+    }
+    .contain{
+        flex-direction: column;
+        width: 100%;
+        
+
+        
+        
+        
+    }
+    input{
+       width: 80%;
+       margin-bottom: 10px;
+    }
+    table{
+        width: 90%;
+    }
+    
+  }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div id="overlay"></div>
+    <header>
+        <div class="logo"><ion-icon name="cart"></ion-icon></div>
+        <div class="heading">Shopping Carts</div>
+    </header><hr style="background-color: whitesmoke; width: 70%; margin: auto;margin-bottom: 20px; margin-top: 5px;">
+
+    
+
+    <div class="nothing"></div>
+    <div class="contain">
+        <div class="f1">    <input type="text" placeholder="Item" id="item"> </div>
+    <div class="f2">     <input type="number" placeholder="Cost Per Item" id="cost">    </div>
+    <div class="f3">    <input type="number" placeholder="Quantity" id="quant">    </div>
+    <div class="f4">    <button id='add' onclick="adding()">Add</button>    </div>
+    </div>
+
+    <table id="tb">
+        <tr>
+            <th>Item Name</th>
+            <th>Cost/Item</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+        </tr>
+       
+    </table>
+
+    <div class="tc">
+        Total Cost : <span id="total">None</span>
+
+    </div>
+    <div id="custom">
+        <div class="symbol"><ion-icon name="alert-circle-sharp"></ion-icon></ion-icon></div>
+        <div class="message">Missing Data Links <br><p style="font-size: 20px;">Enter all the required data for processing</p></div>
+    <div id="end" onclick="myf()"><ion-icon name="close-circle-sharp"></ion-icon></ion-icon>
+
+    </div>
+    <script>
+        var tot = 0;
+        var quant = document.getElementById('quant');
+        quant.addEventListener('keyup', function(event){
+            if(event.keyCode==13){document.getElementById('add').click();}
+        });
+
+        function adding(){
+            var item = document.getElementById('item').value;
+            var cost = document.getElementById('cost').value;
+            var quant = document.getElementById('quant').value;
+            var add = document.getElementById('add');
+            var table = document.getElementById('tb');
+            var tr = document.createElement('tr');
+           
+            var iv = document.createElement('td');
+            var it = document.createTextNode(item);
+            iv.appendChild(it);
+
+            var cv = document.createElement('td');
+            var ct = document.createTextNode(cost);
+            cv.appendChild(ct);
+
+            var qv = document.createElement('td');
+            var qt = document.createTextNode(quant);
+            qv.appendChild(qt);
+
+            var final = document.createElement('td');
+            var finaltext = document.createTextNode(cost*quant);
+            final.appendChild(finaltext);
+            
+            tr.appendChild(iv);
+            tr.appendChild(cv);
+            tr.appendChild(qv);
+            tr.appendChild(final);
+            
+            if(item=="" || cost =="" || quant== ""){document.getElementById('custom').style.display="block";            document.getElementById('overlay').style.display="block"
+}
+            else{
+            table.appendChild(tr);
+
+            document.getElementById('item').value=" ";
+            document.getElementById('cost').value=" ";
+            document.getElementById('quant').value=" ";
+
+
+            tot=tot + cost *quant;
+            document.getElementById('total').innerHTML=tot;
+            
+
+            }
+        }
+
+        var k=1;
+        setInterval(changebg, 5000);
+        function changebg(){
+            document.body.style.backgroundImage="url(/" + k +".jpg)"
+            k++;
+            if(k==5){k=1;}
+            document.body.style.transition="background 2s";
+        }
+
+
+        function myf(){
+            document.getElementById('custom').style.display="none"
+            document.getElementById('overlay').style.display="none"
+
+        }
+    </script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    
+
+
+</body>
+</html>
